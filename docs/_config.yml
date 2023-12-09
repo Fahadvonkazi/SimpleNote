@@ -1,0 +1,10 @@
+# _config.yml
+
+theme: jekyll-theme-primer
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+
+# GitHub Pages Einstellungen
+remote_theme: "fahadvonkazi/SimpleNote"
