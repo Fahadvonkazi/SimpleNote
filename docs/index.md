@@ -3,32 +3,27 @@ title: Home
 nav_order: 0
 ---
 
-{: .attention }
-> Any text enclosed by `[ ]` are placeholders, including the opening and closing brackets.
->
-> You may delete this `attention` box.
+# SimpleNote
 
-# [Project Name]
-
-[Project description]
+The idea is to create a user-friendly web application for note-taking, allowing users to create and organize notes. Furthermore, adding, editing and deleting are features of this web application too. The application includes features such as text formatting, inserting images and calculation functions. There will be sections and pages. For the functionalities, there is a bar to for example highlight text.
 
 ## Team members
 
-### [Jane Dane]
+### Fahad von Kazi
 
 About
-: Some info about Jane
+: I am an individual with diverse interests, including coding, fitness training, playing cellor, gardening, hiking, fishing and continuous learning.
 
 Matr.-Nr.
-: 1234567
+: 77211864465
 
-### [Joe Doe]
+### Ali Ozeir
 
 About
-: Some info about Joe
+: Some info about Ali
 
 Matr.-Nr.
-: 1234567
+: 77211XXXXXX
 
 ## Eidesstattliche Erklärung
 
