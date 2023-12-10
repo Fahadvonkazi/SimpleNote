@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
 {% block HEADER %}
-    <h2>{% block TITLE %}To-dos on list "{{ list.name }}"{% endblock %}</h2>
+	<h2>{% block TITLE %}Todos{% endblock %}</h2>
 {% endblock %}
 
 {% block CONTENT %}
-{% for todo in list.todos %}
+{% for todo in todos %}
 <div class="form-check">
     <label class="form-check-label" for="{{ todo.id }}">
         <a href="{{ url_for('todo', id=todo.id) }}">{{ todo.description }}</a>
@@ -15,4 +15,10 @@
     >
 </div>
 {% endfor %}
+<form action="{{ url_for('todos') }}" method="post"
+    class="row row-cols-auto g-2 pt-3">
+    {{ form.csrf_token }}
+    <div class="col">{{ form.description(class='form-control') }}</div>
+    <div class="col">{{ form.submit(class='btn btn-primary') }}</div>
+</form>
 {% endblock %}
