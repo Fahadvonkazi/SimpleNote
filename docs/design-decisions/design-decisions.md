@@ -40,7 +40,7 @@ Updated
 
 ---
 
-## 02: [Title]
+## 02: Github-Workflow
 
 ### Meta
 
@@ -64,7 +64,7 @@ Updated
 
 ---
 
-## 03: [Title]
+## 03: Data-Model?
 
 ### Meta
 
@@ -88,7 +88,7 @@ Updated
 
 ---
 
-## 04: [Title]
+## 04: GUI?
 
 ### Meta
 
