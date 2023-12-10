@@ -1,19 +1,17 @@
-from flask import Flask, render_template, redirect, url_for, request, abort, flash
-from flask_bootstrap import Bootstrap
-import forms
+from flask import Flask, render_template, url_for
 
-print(1+1)
+app = Flask(__name__)
 
+@app.route('/')
+def home():
+    return render_template('home.html', title='SimpleNote')
 
+@app.route('/about')
+def about():
+    return render_template('about.html', title='About Page')
 
-
-
-
-
-
-
-
-
+if __name__ == '__main__':
+    app.run(debug=True)
 
 
 
@@ -25,6 +23,31 @@ print(1+1)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# from flask import Flask, render_template, redirect, url_for, request, abort, flash
+# from flask_bootstrap import Bootstrap
+# import forms
 
 # app = Flask(__name__)
 

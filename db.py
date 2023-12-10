@@ -1,7 +1,3 @@
-import click
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import orm
-from app import app
 
 
 
@@ -25,6 +21,25 @@ from app import app
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# import click
+# from flask_sqlalchemy import SQLAlchemy
+# from sqlalchemy import orm
+# from app import app
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///todos.sqlite'
 
