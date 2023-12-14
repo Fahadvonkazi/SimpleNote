@@ -16,7 +16,7 @@ nav_order: 3
 {: toc }
 </details>
 
-## 01: Datenbank-Entscheidung
+## 01: Github Workflow
 
 ### Meta
 
@@ -40,7 +40,7 @@ Updated
 
 ---
 
-## 02: Github-Workflow
+## 02: Reduzieren des Funktionsumfangs
 
 ### Meta
 
@@ -64,7 +64,7 @@ Updated
 
 ---
 
-## 03: Data-Model?
+## 03: Datenbank-Entscheidung
 
 ### Meta
 

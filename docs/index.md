@@ -5,7 +5,7 @@ nav_order: 0
 
 # SimpleNote
 
-The idea is to create a user-friendly web application for note-taking, allowing users to create and organize notes. Furthermore, adding, editing and deleting are features of this web application too. The application includes features such as text formatting, inserting images and calculation functions. There will be sections and pages. For the functionalities, there is a bar to for example highlight text.
+Our idea is to create SimpleNote, a user-friendly web application that goes beyond basic notetaking. It seamlessly combines ease of use with powerful functionality, allowing users to capture thoughts, organize ideas, and manage information intuitively and effortlessly. Users can add, edit, and delete notes, employ simple text formatting, and uniquely, insert images directly into the flow of text. The application introduces a structured framework with books and pages, providing a versatile environment for brainstorming, creativity, and efficient knowledge documentation.
 
 ## Team members
 
