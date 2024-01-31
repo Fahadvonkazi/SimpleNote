@@ -1,3 +1,5 @@
+# __init__.py
+
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
@@ -11,19 +13,19 @@ def create_app():
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
     db.init_app(app)
 
-#Blueprints werden importiert, weil auth und views in anderen Ordnern sind
+    # Blueprints werden importiert, da auth und views in anderen Ordnern sind
     from .views import views
     from .auth import auth
 
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
 
- #Bevor DB intialisiert wird, müssen die DB-Modelle definiert werden
+    # Bevor DB initialisiert wird, müssen die DB-Modelle definiert werden
     from .models import User, Note
 
-#SQLAlchemy testet, ob eine DB bereits vorhanden ist oder nicht 
+    # SQLAlchemy testet, ob eine DB bereits vorhanden ist oder nicht
     with app.app_context():
-      db.create_all()
+        db.create_all()
 
     login_manager = LoginManager()
     login_manager.login_view = 'auth.login'
@@ -35,3 +37,4 @@ def create_app():
 
     return app
 
+app = create_app()

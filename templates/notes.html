@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Notes{% endblock %}
+
+{% block content %}
+<div class="container-lg my-5">
+    <h3>Book Title</h3>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Book 1</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Page 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Page 2</a>
+                </li>
+                <!-- Add more pages here -->
+            </ul>
+        </div>
+        <div class="ml-auto">
+            <button class="btn btn-outline-dark">Add Page</button>
+        </div>
+    </nav>
+    <div class="row mt-3">
+        <div class="col-md-8">
+            <!-- Text formatting and image insertion options go here -->
+            <div class="btn-group" role="group">
+                <button class="btn btn-outline-dark">Bold</button>
+                <button class="btn btn-outline-dark">Italic</button>
+                <button class="btn btn-outline-dark">Underline</button>
+                <button class="btn btn-outline-dark">Insert Image</button>
+            </div>
+            <textarea class="form-control mt-3" rows="10" placeholder="Write your notes here..."></textarea>
+        </div>
+        <div class="col-md-4">
+            <!-- Notes area goes here -->
+            <div class="bg-light p-3">
+                <h5>Your Notes</h5>
+                <ul>
+                    <li>Note 1</li>
+                    <li>Note 2</li>
+                    <!-- Display user's notes dynamically -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="fixed-bottom mt-3">
+        <button class="btn btn-light">Add Book</button>
+        <button class="btn btn-light">Profile</button>
+    </div>
+</div>
+{% endblock %}
