@@ -1,25 +1,26 @@
 {% extends "base.html" %}
 {% block title %}Sign Up{% endblock %}
 {% block content %}
-<div class="container-lg my-5">
-    <img src="{{ url_for('static', filename='images/SimpleNote_logo.png') }}" alt="SimpleNote Logo" class="mb-4" width="300" height="300">
-    <h3>Registrieren</h3>
+<div class="container-lg d-flex flex-column align-items-center justify-content-center my-5">
+    <img src="{{ url_for('static', filename='images/SimpleNote_logo.png') }}" alt="SimpleNote Logo" class="mb-4" width="350" height="220">
+    <h3 class="mb-3"><strong>Sign Up</strong></h3>
     <form method="POST" action="{{ url_for('auth.register') }}">
-        <div class="form-group">
-            <label for="username">Benutzername</label>
-            <input type="text" class="form-control" id="username" name="username" placeholder="Benutzername eingeben" />
+        <div class="form-group mb-5">
+            <label for="username" style="font-size: 1.1em;"><strong>Name:</strong></label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Name..." style="width: 480px; background-color: #cfe8f5;" required>
         </div>
-        <div class="form-group">
-            <label for="password1">Passwort</label>
-            <input type="password" class="form-control" id="password1" name="password1" placeholder="Passwort eingeben" />
+        <div class="form-group mb-9 mt-3">
+            <label for="password1" style="font-size: 1.1em;"><strong>Password:</strong></label>
+            <input type="password" class="form-control" id="password1" name="password1" placeholder="Password..." style="width: 480px; background-color: #cfe8f5;" required>
         </div>
-        <div class="form-group">
-            <label for="password2">Passwort wiederholen</label>
-            <input type="password" class="form-control" id="password2" name="password2" placeholder="Passwort wiederholen" />
+        <div class="form-group mb-3 mt-1">
+            <label for="password2" style="font-size: 1.1em;"><strong>Repeat Password:</strong></label>
+            <input type="password" class="form-control" id="password2" name="password2" placeholder="Password..." style="width: 480px; background-color: #cfe8f5;" required>
         </div>
-        <br />
-        <button type="submit" class="btn btn-light">Registrieren</button>
+        <p class="mt-1" style="font-style: italic; margin-bottom: 1cm;">Do you already have an account? <a href="{{ url_for('auth.login') }}"><u>Log In!</u></a></p> <!-- Höher verschoben -->
+        <div class="form-group d-flex justify-content-center mt-2">
+            <button type="submit" class="btn btn-light rounded-pill px-5 py-3" style="background-color: #fff8dc; border: 1px solid black; font-size: 1.1em;"><strong>Sign Up!</strong></button>
+        </div>
     </form>
-    <p class="mt-3">Bereits einen Account? <a href="{{ url_for('auth.login') }}">Log-in</a></p>
 </div>
 {% endblock %}

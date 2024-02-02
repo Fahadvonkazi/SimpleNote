@@ -2,20 +2,20 @@
 {% block title %}Login{% endblock %}
 {% block content %}
 <div class="container-lg d-flex flex-column align-items-center justify-content-center my-5">
-    <img src="{{ url_for('static', filename='images/SimpleNote_logo.png') }}" alt="SimpleNote Logo" class="mb-5" width="350" height="220">
-    <h3><strong>Login</strong></h3> <!-- Schreibe "Login" fett -->
+    <img src="{{ url_for('static', filename='images/SimpleNote_logo.png') }}" alt="SimpleNote Logo" class="mb-4" width="350" height="220">
+    <h3 class="mb-3"><strong>Login</strong></h3>
     <form method="POST" action="{{ url_for('auth.login') }}">
-        <div class="form-group mb-3">
-            <label for="username"><strong>Name:</strong></label>
-            <input type="text" class="form-control" id="username" name="username" placeholder="Name eingeben" style="width: 400px; background-color: #cfe8f5;" required>
+        <div class="form-group mb-5">
+            <label for="username" style="font-size: 1.1em;"><strong>Name:</strong></label> <!-- Hinzugefügt: Font-Size -->
+            <input type="text" class="form-control" id="username" name="username" placeholder="Name..." style="width: 480px; background-color: #cfe8f5;" required>
         </div>
-        <div class="form-group mb-6">
-            <label for="password"><strong>Passwort:</strong></label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Passwort eingeben" style="width: 400px; background-color: #cfe8f5;" required>
+        <div class="form-group mb-9 mt-3">
+            <label for="password" style="font-size: 1.1em;"><strong>Password:</strong></label> <!-- Hinzugefügt: Font-Size -->
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password..." style="width: 480px; background-color: #cfe8f5;" required>
         </div>
-        <p class="mt-1" style="font-style: italic;">Don't have an account? <a href="{{ url_for('auth.register') }}">Create One</a></p>
-        <div class="form-group d-flex justify-content-center mt-1">
-            <button type="submit" class="btn btn-light rounded-pill px-5 py-3" style="background-color: #fff8dc;">Log In!</button> <!-- Ändere die Farbe des Buttons -->
+        <p class="mt-1" style="font-style: italic; margin-bottom: 1cm;">Don't have an account? <a href="{{ url_for('auth.register') }}"><u>Create One!</u></a></p>
+        <div class="form-group d-flex justify-content-center mt-2">
+            <button type="submit" class="btn btn-light rounded-pill px-5 py-3" style="background-color: #fff8dc; border: 1px solid black; font-size: 1.1em;"><strong>Log In!</strong></button>
         </div>
     </form>
 </div>

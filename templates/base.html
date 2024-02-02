@@ -13,7 +13,7 @@
         }
     </style>
     <title>{% block title %}Note Taking App{% endblock %}</title>
-    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2564/2564169.png" />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/SimpleNote_logo.png') }}" />
 </head>
 
 <body>
@@ -38,24 +38,12 @@
         {% block content %} {% endblock %}
     </div>
 
-    <footer class="text-center text-lg-start bg-light text-muted fixed-bottom">
-        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">© 2024
-            <a class="text-reset fw-bold" href="/impressum">Impressum</a>
+    <footer class="text-center bg-light text-muted fixed-bottom" style="height: 3cm; position: relative;">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, 0.05); padding: 1cm;">
+            <p class="mb-0" style="display: inline;">© 2024</p>
+            <a class="text-reset fw-bold" href="/impressum" style="display: inline; margin-left: 0.5cm;">Impressum</a>
         </div>
-    </footer>
+    </footer>      
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-
-    <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
-
-</body>
-
-</html>
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJ
