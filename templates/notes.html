@@ -4,53 +4,80 @@
 
 {% block content %}
 <div class="container-lg my-5">
-    <h3>Book Title</h3>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Book 1</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbar">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Page 1</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Page 2</a>
-                </li>
-                <!-- Add more pages here -->
-            </ul>
-        </div>
-        <div class="ml-auto">
-            <button class="btn btn-outline-dark">Add Page</button>
-        </div>
-    </nav>
-    <div class="row mt-3">
-        <div class="col-md-8">
-            <!-- Text formatting and image insertion options go here -->
-            <div class="btn-group" role="group">
-                <button class="btn btn-outline-dark">Bold</button>
-                <button class="btn btn-outline-dark">Italic</button>
-                <button class="btn btn-outline-dark">Underline</button>
-                <button class="btn btn-outline-dark">Insert Image</button>
+    <div class="row align-items-start">
+        <!-- Logo and Functionalities -->
+        <div class="col-md-2">
+            <div class="d-flex align-items-center">
+                <img src="{{ url_for('static', filename='images/SimpleNote_logo.png') }}" alt="SimpleNote Logo" class="mr-3" height="50">
+                <div>
+                    <button class="btn btn-outline-dark mr-2">Font Size</button>
+                    <button class="btn btn-outline-dark mr-2">Font Color</button>
+                    <button class="btn btn-outline-dark mr-2">Bold</button>
+                    <button class="btn btn-outline-dark mr-2">Italic</button>
+                    <button class="btn btn-outline-dark mr-2">Underline</button>
+                    <button class="btn btn-outline-dark mr-2">Strikethrough</button>
+                    <button class="btn btn-outline-dark mr-2">Insert Image</button>
+                </div>
             </div>
-            <textarea class="form-control mt-3" rows="10" placeholder="Write your notes here..."></textarea>
         </div>
+
+        <!-- Books Section -->
         <div class="col-md-4">
-            <!-- Notes area goes here -->
-            <div class="bg-light p-3">
-                <h5>Your Notes</h5>
-                <ul>
-                    <li>Note 1</li>
-                    <li>Note 2</li>
-                    <!-- Display user's notes dynamically -->
-                </ul>
+            <div class="list-group mb-4">
+                <a href="#" class="list-group-item list-group-item-action active">
+                    Book 1
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">Book 2</a>
+                <!-- Add more books -->
             </div>
+            <button class="btn btn-light">Add Book</button>
         </div>
-    </div>
-    <div class="fixed-bottom mt-3">
-        <button class="btn btn-light">Add Book</button>
-        <button class="btn btn-light">Profile</button>
+
+        <!-- Pages Section -->
+        <div class="col-md-4">
+            <div class="list-group mb-4">
+                <a href="#" class="list-group-item list-group-item-action active">
+                    Page 1
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">Page 2</a>
+                <!-- Add more pages -->
+            </div>
+            <button class="btn btn-light">Add Page</button>
+        </div>
+
+        <!-- Note Writing Area -->
+        <div class="col-md-6">
+            <textarea class="form-control mb-4" rows="20" placeholder="Write your notes here..."></textarea>
+        </div>
+
+        <!-- Logout Icon -->
+        <div class="col-md-2 text-left">
+            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#logoutModal">
+                JW <!-- Hier die Initialen der eingeloggten Person einfügen -->
+            </button>
+        </div>
     </div>
 </div>
+
+<!-- Logout Modal -->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="logoutModalLabel">Logout Confirmation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to logout?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary">Logout</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
