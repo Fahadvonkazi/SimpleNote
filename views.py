@@ -1,10 +1,15 @@
-from flask import render_template, request, flash, redirect, url_for
+from flask import render_template, request, flash, redirect, url_for, Blueprint
 from flask_login import login_required, current_user
 from . import db
 from .models import Note
-from flask import Blueprint
+
 
 views = Blueprint('views', __name__)
+
+@views.route('/notes')
+@login_required
+def notes():
+    return render_template('notes.html', user=current_user)
 
 @views.route('/')
 @login_required

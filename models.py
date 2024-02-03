@@ -1,7 +1,5 @@
-from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
-
-db = SQLAlchemy() 
+from . import db
 
 #Erstellen des Datenbankmodells für Benutzer
 class User(db.Model, UserMixin):

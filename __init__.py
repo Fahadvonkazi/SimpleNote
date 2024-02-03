@@ -1,5 +1,3 @@
-# __init__.py
-
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
@@ -11,6 +9,8 @@ def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'SimpleNote'
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    
+    # Hier wird die db-Instanz mit der App verbunden
     db.init_app(app)
 
     # Blueprints werden importiert, da auth und views in anderen Ordnern sind
@@ -37,4 +37,4 @@ def create_app():
 
     return app
 
-app = create_app()
+
