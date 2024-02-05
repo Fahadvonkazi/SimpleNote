@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, redirect, url_for, flash, request
 from flask_login import login_user, logout_user, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from .models import User
-from . import app, db, LoginManager
+from . import db, LoginManager
 from .forms import RegistrationForm
 
 auth = Blueprint('auth', __name__)
@@ -10,7 +10,7 @@ auth = Blueprint('auth', __name__)
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-@app.route('/register', methods=['GET', 'POST'])
+@auth.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
     if form.validate_on_submit():

@@ -23,7 +23,7 @@ def create_app():
     # Bevor DB initialisiert wird, müssen die DB-Modelle definiert werden
     from .models import User, Note
 
-    # SQLAlchemy testet, ob eine DB bereits vorhanden ist oder nicht
+    # SQLAlchemy testet, ob eine DB bereits vorhanden ist oder nichtf
     with app.app_context():
         db.create_all()
 
