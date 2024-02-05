@@ -1,39 +1,26 @@
-from flask import Blueprint, render_template, redirect, url_for, flash
+from flask import Blueprint, render_template, redirect, url_for, flash, request
 from flask_login import login_user, logout_user, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from .models import User
-from . import db, LoginManager
+from . import app, db, LoginManager
 from .forms import RegistrationForm
-from flask import request
 
 auth = Blueprint('auth', __name__)
 
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-@auth.route('/register', methods=['GET', 'POST'])
+@app.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
-
     if form.validate_on_submit():
-        username = form.username.data
-        password1 = form.password.data
-        password2 = form.confirm_password.data
+        new_user = User(username=form.username.data, password=form.password.data)
+        db.session.add(new_user)
+        db.session.commit()
 
-        if len(username) < 2:
-            flash('Benutzername muss länger als ein Zeichen sein!', category='error')
-        elif password1 != password2:
-            flash('Passwörter stimmen nicht überein!', category='error')
-        elif len(password1) < 7:
-            flash('Passwort muss mindestens sieben Zeichen lang sein!', category='error')
-        else:
-            new_user = User(username=username, password=generate_password_hash(password1, method='pbkdf2:sha256'))
-            db.session.add(new_user)
-            db.session.commit()
-            login_user(new_user, remember=True)
-            flash('Registrierung erfolgreich! Bitte logge dich ein.', category='success')
-            return redirect(url_for('auth.login'))
+        flash('Successful signed up! Please Log In!', 'success')
 
+        return redirect(url_for('index'))
     return render_template('register.html', form=form, signup_success=False)
 
 

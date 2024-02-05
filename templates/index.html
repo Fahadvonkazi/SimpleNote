@@ -1,6 +1,17 @@
 {% extends "base.html" %}
 {% block title %}Login{% endblock %}
 {% block content %}
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+  {% for category, message in messages %}
+    <div class="alert alert-{{ category }}">
+      {{ message }}
+    </div>
+  {% endfor %}
+{% endif %}
+{% endwith %}
+
 <div class="container-lg d-flex flex-column align-items-center justify-content-center my-5">
     <img src="{{ url_for('static', filename='images/SimpleNote_logo.png') }}" alt="SimpleNote Logo" class="mb-4" width="350" height="220">
     <h3 class="mb-3"><strong>Login</strong></h3>
