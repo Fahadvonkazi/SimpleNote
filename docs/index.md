@@ -3,6 +3,8 @@ title: Home
 nav_order: 0
 ---
 
+# Team SimpleNote
+
 ## Introduction
 As part of the "Entwicklung von Web-Anwendungen" module, the project team was tasked with developing a web app. The team decided to create an application that allows users to easily take notes and organize their thoughts. Users can sort their ideas in books in pages after logging in. 
 
