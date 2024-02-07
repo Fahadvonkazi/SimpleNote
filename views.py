@@ -11,11 +11,18 @@ views = Blueprint('views', __name__)
 def notes():
     return render_template('notes.html', user=current_user)
 
+
+@views.route('/index')
+def index():
+    return render_template('index.html', user=current_user)
+
+
 @views.route('/')
 @login_required
 def home():
     notes = Note.query.filter_by(user_id=current_user.id).all()
     return render_template('notes.html', user=current_user, notes=notes)
+
 
 @views.route('/add_note', methods=['POST'])
 @login_required

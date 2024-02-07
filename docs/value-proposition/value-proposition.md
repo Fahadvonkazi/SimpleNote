@@ -17,7 +17,7 @@ nav_order: 1
 </details>
 
 ## [The problem]
-Users often struggle with efficient note management, facing challenges in keeping their thoughts organized and easily accessible. Existing note-taking tools may lack simplicity and fail to provide an intuitive solution for structured note-keeping and effective brainstorming.
+MeUsers often struggle with efficient note management, facing challenges in keeping their thoughts organized and easily accessible. Existing note-taking tools may lack simplicity and fail to provide an intuitive solution for structured note-keeping and effective brainstorming.
 
 ## [Our solution]
 SimpleNote is the solution — an easy-to-use and intuitive application designed to streamline note management. It goes beyond basic note-taking, offering structured note-keeping features and actively encouraging brainstorming. By providing a user-friendly platform, it empowers creative thinkers, students, and professionals to effortlessly capture, organize, and manage information.

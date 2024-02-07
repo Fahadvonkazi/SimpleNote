@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms.fields import StringField, SubmitField, HiddenField, BooleanField, SelectField
+from wtforms.fields import StringField, SubmitField, HiddenField, PasswordField
 from wtforms.validators import InputRequired, Length, EqualTo
 
 class NoteForm(FlaskForm):
@@ -14,13 +14,12 @@ class EditNoteForm(FlaskForm):
     submit = SubmitField('Update')
 
 class LoginForm(FlaskForm):
-    email = StringField('Email', validators=[InputRequired()])
-    password = StringField('Password', validators=[InputRequired()])
+    username = StringField('Username', validators=[InputRequired()])
+    password = PasswordField('Password', validators=[InputRequired()])
     submit = SubmitField('Login')
 
 class RegistrationForm(FlaskForm):
     username = StringField('Username', validators=[InputRequired(), Length(min=3)])
-    email = StringField('Email', validators=[InputRequired()])
-    password = StringField('Password', validators=[InputRequired(), Length(min=7)])
-    confirm_password = StringField('Confirm Password', validators=[InputRequired(), Length(min=7), EqualTo('password', message='Passwords must match')])
+    password = PasswordField('Password', validators=[InputRequired(), Length(min=7)])
+    confirm_password = PasswordField('Confirm Password', validators=[InputRequired(), Length(min=7), EqualTo('password', message='Passwords must match')])
     submit = SubmitField('Register')

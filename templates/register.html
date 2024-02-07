@@ -2,15 +2,6 @@
 {% block title %}Sign Up{% endblock %}
 {% block content %}
 
-{% if signup_success %}
-    <!-- Zeige das Modal nach erfolgreicher Registrierung -->
-    <script>
-        $(document).ready(function () {
-            $('#signupSuccessModal').modal('show');
-        });
-    </script>
-{% endif %}
-
 <div class="modal fade" id="signupSuccessModal" tabindex="-1" role="dialog" aria-labelledby="signupSuccessModalLabel" aria-hidden="True">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -41,16 +32,19 @@
         </div>
         <div class="form-group mb-9 mt-3">
             <label for="password1" style="font-size: 1.1em;"><strong>Password:</strong></label>
-            {{ form.password(class="form-control", placeholder="Password...", style="width: 480px; background-color: #cfe8f5;", required=True) }}
+            {{ form.password(type="password", class="form-control", placeholder="Password...", style="width: 480px; background-color: #cfe8f5;", required=True) }}
         </div>
         <div class="form-group mb-3 mt-1">
             <label for="password2" style="font-size: 1.1em;"><strong>Repeat Password:</strong></label>
-            {{ form.confirm_password(class="form-control", placeholder="Password...", style="width: 480px; background-color: #cfe8f5;", required=True) }}
+            {{ form.confirm_password(type="password", class="form-control", placeholder="Password...", style="width: 480px; background-color: #cfe8f5;", required=True) }}
         </div>
-        <p class="mt-1" style="font-style: italic; margin-bottom: 1cm;">Do you already have an account? <a href="{{ url_for('auth.login') }}"><u>Log In!</u></a></p> <!-- Höher verschoben -->
+        <p class="mt-1" style="font-style: italic; margin-bottom: 1cm;">Do you already have an account? <a href="{{ url_for('auth.login') }}"><u>Log In!</u></a></p> 
         <div class="form-group d-flex justify-content-center mt-2">
             {{ form.submit(class="btn btn-light rounded-pill px-5 py-3", style="background-color: #fff8dc; border: 1px solid black; font-size: 1.1em;") }}
         </div>
+    </form>
+</div>
+
     </form>
 </div>
 {% endblock %}
