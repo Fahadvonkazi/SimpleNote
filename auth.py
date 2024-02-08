@@ -1,74 +1,96 @@
+# Module und Klassen aus Flask werden importiert
 from flask import Blueprint, render_template, redirect, url_for, flash, request
+
+# Funktionen und Klassen aus Flask-Login und Werkzeug werden importiert
 from flask_login import login_user, logout_user, current_user, login_required
 from werkzeug.security import generate_password_hash, check_password_hash
+
+# User-Modell, Registrieruns-Forms und DB-Verbindung werden importiert
 from .models import User
 from . import db, LoginManager
 from .forms import RegistrationForm
 
+# Blueprint für Authentifizierurng wird definiert
 auth = Blueprint('auth', __name__)
 
+# Funktion zum Laden eines Benutzers anhand seiner ID 
 def load_user(user_id):
     return User.query.get(int(user_id))
 
+# Route für die Registrierung von Benutzern
 @auth.route('/register', methods=['GET', 'POST'])
 def register():
+    # RegistrationsForm-Objekt wird erstellt
     form = RegistrationForm()
+    # Wenn Formular validiert wurde, indem Post-request mit Daten gesendet wurde, überprüfe, ob ein Benutzer mit dem angegebenen Benutzernamen bereits existiert 
     if form.validate_on_submit():
         existing_user = User.query.filter_by(username=form.username.data).first()
+        # Wenn Benutzer existiert, dann Fehlermeldung ausgeben
         if existing_user:
             flash('Der Benutzername ist bereits vergeben. Bitte wählen Sie einen anderen.', 'error')
         else:
-            # Passwort hashen
+            # Passwort wird gehasht mit pbkdf2: sha 256-Methode
             hashed_password = generate_password_hash(form.password.data, method='pbkdf2:sha256')
-            # Neuen Benutzer erstellen und zum Datenbank hinzufügen
+            # Neuen Benutzer erstellen und zur Datenbank hinzufügen
             new_user = User(username=form.username.data, password=hashed_password)
             db.session.add(new_user)
             db.session.commit()
+
+            #Ausgabe einer Erfolgsmeldung und Weiterleitung zur Login-Page zum direkten Einloggen nach erfolgreichem Registrieren
             flash('Erfolgreich registriert! Bitte einloggen.', 'success')
             return redirect(url_for('views.index'))
-
+    # Registerformular wird gerendert
     return render_template('register.html', form=form, signup_success=False)
 
+# Route für die Überprüfung der Benutzer in der Datenbank zum Debuggen 
 @auth.route('/check_database')
 def check_database():
-    # Alle Benutzer abrufen
+    # Alle Benutzer werden abgerufen
     all_users = User.query.all()
 
     # Ausgabe der Benutzerinformationen
     for user in all_users:
         print(f"ID: {user.id}, Username: {user.username}, Password: {user.password}")
-
+    # Ausgabe einer Bestätigung
     return "Überprüfung der Datenbank abgeschlossen."
 
-
+# Route zum Einloggen von Benutzern
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
+    #Wenn request empfangen wird und Formular gesendet wurde, nehme Benutzernamen und Passwort aus dem Formular
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
 
+        # Aussgabe der Anmeldeinformationen zum Debuggen 
         print(f"Received login request for username: {username}, password: {password}")
         
+        #Abgleich des eingebenen Benutzernamens mit den Nutzern in der Datenbank
         user = User.query.filter_by(username=username).first()
 
+        #Wenn Benutzer in DB nicht gefunden wurde, wird Fehlermeldung ausgegeben. Wenn doch, gib Benutzer und Passworthash aus (wieder zum Debuggen)
         if not user:
             flash('Benutzer nicht gefunden. Überprüfen Sie Ihren Benutzernamen.', category='error')
         else:
             print(f"User found in the database: {user.username}")
             print(f"Stored password hash: {user.password}")
-
+        #PW wird mit gespeichertem PW-hash verglichen. Wenn PW korrekt, dann wird der Benutzer eingeloggt, direkt zur notes.html weitergeleitet und Erfolgsmeldung ausgegeben.
             if check_password_hash(user.password, password):
                 login_user(user)
                 flash('Erfolgreich eingeloggt!', category='success')
                 return redirect(url_for('views.notes'))
+            # Wenn PW inkorrekt eingegeben, dann wird eine Fehlermeldung ausgegeben.
             else:
                 flash('Falsches Passwort! Versuchen Sie es erneut.', category='error')
-
+    # Das Login-Formular wird gerendert
     return render_template('index.html', user=current_user)
 
-
+# Route für das Ausloggen von Benutzern
 @auth.route('/logout')
 def logout():
+    # Logge den aktuellen Benutzer aus
     logout_user()
+
+    # Gib eine Erfolgsmeldung aus und leite Benutzer zur Login Seite weiter.
     flash('Erfolgreich ausgeloggt!', category='success')
     return redirect(url_for('auth.login'))

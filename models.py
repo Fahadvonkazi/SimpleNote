@@ -1,3 +1,4 @@
+# UserMixin-Klasse und DB werden importiert
 from flask_login import UserMixin
 from . import db
 
