@@ -43,13 +43,13 @@ def add_note():
 
     # Es wird geprüft, ob Titel und Inhalt vorhanden sind 
     if not title or not content:
-        flash('Bitte Titel und Inhalt eingeben!', category='error')
+        flash('Please enter title and content!', category='error')
     # Notiz wird erstellt und zur DB hinzugefügt
     else:
         new_note = Note(title=title, content=content, author=current_user)
         db.session.add(new_note)
         db.session.commit()
-        flash('Notiz erfolgreich hinzugefügt!', category='success')
+        flash('Note successfully added!', category='success')
 
     return redirect(url_for('views.home'))
 
@@ -64,7 +64,7 @@ def edit_note(note_id):
         note.title = request.form.get('title')
         note.content = request.form.get('content')
         db.session.commit()
-        flash('Notiz erfolgreich bearbeitet!', category='success')
+        flash('Note successfully edited!', category='success')
         return redirect(url_for('views.home'))
 
     return render_template('edit_note.html', user=current_user, note=note)
@@ -76,5 +76,5 @@ def delete_note(note_id):
     note = Note.query.get(note_id)
     db.session.delete(note)
     db.session.commit()
-    flash('Notiz erfolgreich gelöscht!', category='success')
+    flash('Note successfully deleted!', category='success')
     return redirect(url_for('views.home'))

@@ -2,6 +2,7 @@
 {% block title %}Sign Up{% endblock %}
 {% block content %}
 
+<!-- Registrierung - Erfolgsmeldung   -->
 <div class="modal fade" id="signupSuccessModal" tabindex="-1" role="dialog" aria-labelledby="signupSuccessModalLabel" aria-hidden="True">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -21,6 +22,7 @@
     </div>
 </div>
 
+<!-- Formular für Sign-Up -->
 <div class="container-lg d-flex flex-column align-items-center justify-content-center my-5">
     <img src="{{ url_for('static', filename='images/SimpleNote_logo.png') }}" alt="SimpleNote Logo" class="mb-4" width="350" height="220">
     <h3 class="mb-3"><strong>Sign Up</strong></h3>
@@ -45,6 +47,4 @@
     </form>
 </div>
 
-    </form>
-</div>
 {% endblock %}

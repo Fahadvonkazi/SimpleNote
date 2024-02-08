@@ -5,8 +5,8 @@
 {% block content %}
 <div class="container-lg my-5">
     <div class="row align-items-start">
-        <!-- Logo and Functionalities -->
         <div class="col-md-2">
+            <!-- Bar für Textformatierung -->
             <div class="d-flex align-items-center">
                 <img src="{{ url_for('static', filename='images/SimpleNote_logo.png') }}" alt="SimpleNote Logo" class="mr-3" height="50">
                 <div>
@@ -21,45 +21,42 @@
             </div>
         </div>
 
-        <!-- Books Section -->
+        <!-- Seitenleiste für Boos -->
         <div class="col-md-4">
             <div class="list-group mb-4">
                 <a href="#" class="list-group-item list-group-item-action active">
                     Book 1
                 </a>
                 <a href="#" class="list-group-item list-group-item-action">Book 2</a>
-                <!-- Add more books -->
             </div>
             <button class="btn btn-light">Add Book</button>
         </div>
 
-        <!-- Pages Section -->
+        <!-- Seitenleiste für Pages -->
         <div class="col-md-4">
             <div class="list-group mb-4">
                 <a href="#" class="list-group-item list-group-item-action active">
                     Page 1
                 </a>
                 <a href="#" class="list-group-item list-group-item-action">Page 2</a>
-                <!-- Add more pages -->
             </div>
             <button class="btn btn-light">Add Page</button>
         </div>
 
-        <!-- Note Writing Area -->
+        <!-- Eingabefeld für Notess -->
         <div class="col-md-6">
             <textarea class="form-control mb-4" rows="20" placeholder="Write your notes here..."></textarea>
         </div>
 
-        <!-- Logout Icon -->
+        <!-- Button zum Ausloggen -->
         <div class="col-md-2 text-left">
             <button type="button" class="btn btn-light" data-toggle="modal" data-target="#logoutModal">
-                JW <!-- Hier die Initialen der eingeloggten Person einfügen -->
             </button>
         </div>
     </div>
 </div>
 
-<!-- Logout Modal -->
+<!-- Bestätigungsmeldung beim Ausloggen -->
 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

@@ -27,7 +27,7 @@ def register():
         existing_user = User.query.filter_by(username=form.username.data).first()
         # Wenn Benutzer existiert, dann Fehlermeldung ausgeben
         if existing_user:
-            flash('Der Benutzername ist bereits vergeben. Bitte wählen Sie einen anderen.', 'error')
+            flash('The username is already taken. Please choose another one.', 'error')
         else:
             # Passwort wird gehasht mit pbkdf2: sha 256-Methode
             hashed_password = generate_password_hash(form.password.data, method='pbkdf2:sha256')
@@ -37,7 +37,7 @@ def register():
             db.session.commit()
 
             #Ausgabe einer Erfolgsmeldung und Weiterleitung zur Login-Page zum direkten Einloggen nach erfolgreichem Registrieren
-            flash('Erfolgreich registriert! Bitte einloggen.', 'success')
+            flash('Successfully registered! Please log in.', 'success')
             return redirect(url_for('views.index'))
     # Registerformular wird gerendert
     return render_template('register.html', form=form, signup_success=False)
@@ -70,18 +70,18 @@ def login():
 
         #Wenn Benutzer in DB nicht gefunden wurde, wird Fehlermeldung ausgegeben. Wenn doch, gib Benutzer und Passworthash aus (wieder zum Debuggen)
         if not user:
-            flash('Benutzer nicht gefunden. Überprüfen Sie Ihren Benutzernamen.', category='error')
+            flash('User not found. Please check your username.', category='error')
         else:
             print(f"User found in the database: {user.username}")
             print(f"Stored password hash: {user.password}")
         #PW wird mit gespeichertem PW-hash verglichen. Wenn PW korrekt, dann wird der Benutzer eingeloggt, direkt zur notes.html weitergeleitet und Erfolgsmeldung ausgegeben.
             if check_password_hash(user.password, password):
                 login_user(user)
-                flash('Erfolgreich eingeloggt!', category='success')
+                flash('Successfully logged in!', category='success')
                 return redirect(url_for('views.notes'))
             # Wenn PW inkorrekt eingegeben, dann wird eine Fehlermeldung ausgegeben.
             else:
-                flash('Falsches Passwort! Versuchen Sie es erneut.', category='error')
+                flash('Wrong password. Please try again', category='error')
     # Das Login-Formular wird gerendert
     return render_template('index.html', user=current_user)
 
@@ -92,5 +92,5 @@ def logout():
     logout_user()
 
     # Gib eine Erfolgsmeldung aus und leite Benutzer zur Login Seite weiter.
-    flash('Erfolgreich ausgeloggt!', category='success')
+    flash('Successfully logged out!', category='success')
     return redirect(url_for('auth.login'))
