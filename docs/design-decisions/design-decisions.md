@@ -16,7 +16,7 @@ nav_order: 3
 {: toc }
 </details>
 
-## 01: Github Workflow
+## 01: Reduzieren des Funktionsumfangs
 
 ### Meta
 
@@ -40,7 +40,7 @@ Updated
 
 ---
 
-## 02: Reduzieren des Funktionsumfangs
+## 02: Datenbank-Entscheidung
 
 ### Meta
 
@@ -64,7 +64,7 @@ Updated
 
 ---
 
-## 03: Datenbank-Entscheidung
+## 03: GUI?
 
 ### Meta
 
@@ -88,31 +88,7 @@ Updated
 
 ---
 
-## 04: GUI?
-
-### Meta
-
-Status
-: **Work in progress** - Decided - Obsolete
-
-Updated
-: DD-MMM-YYYY
-
-### Problem statement
-
-[Describe the problem to be solved or the goal to be achieved. Include relevant context information.]
-
-### Decision
-
-[Describe **which** design decision was taken for **what reason** and by **whom**.]
-
-### Regarded options
-
-[Describe any possible design decision that will solve the problem. Assess these options, e.g., via a simple pro/con list.]
-
----
-
-## 05: [Title]
+## 04: [Title]
 
 ### Meta
 

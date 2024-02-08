@@ -5,7 +5,10 @@ nav_order: 4
 ---
 
 {: .label }
-[Jane Dane]
+Fahad von Kazi
+
+{: .label }
+Ali Ozeir
 
 # Reference documentation
 {: .no_toc }
@@ -61,7 +64,7 @@ Browser shows: `Successfully logged in!`
 '/check_database'
 
 **Methods:** 
-none
+`GET`
 
 **Purpose:** 
 This route is for debugging purposes and checks the users stored in the database. It retrieves all users from the database and prints their information.
@@ -242,18 +245,9 @@ This class defines a FlaskForm for creating a note. It includes fields for title
 
 ---
 
-## NoteForm
-
-### class NoteForm(FlaskForm)
-
-**Purpose:** 
-This class defines a FlaskForm for creating a note. It includes fields for title and content, along with validators to ensure that the input is required and meets certain length requirements.
-
----
-
 ## EditNoteForm
 
 ### class EditNoteForm(FlaskForm)
 
 **Purpose:** 
-This class defines a FlaskForm for editing a note. It includes fields for the ID of the note (hidden), title, and content, along with validators to ensure that the input is required and meets certain length requirements.
+This class defines a FlaskForm for editing a note. It includes fields for the ID of the note, title, and content, along with validators to ensure that the input is required and meets certain length requirements.
