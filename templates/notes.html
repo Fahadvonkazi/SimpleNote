@@ -1,137 +1,183 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block title %}Notes{% endblock %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./notesStyle.css" rel="stylesheet">
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+    }
 
-{% block content %}
-<div class="container-lg my-5">
-    <div class="row align-items-start">
-        <div class="col-md-2">
-            <!-- Bar für Textformatierung -->
-            <div class="d-flex align-items-center">
-                <img src="{{ url_for('static', filename='images/SimpleNote_logo.png') }}" alt="SimpleNote Logo" class="mr-3" height="50">
-                <div>
-                    <button class="btn btn-outline-dark mr-2">Font Size</button>
-                    <button class="btn btn-outline-dark mr-2">Font Color</button>
-                    <button class="btn btn-outline-dark mr-2">Bold</button>
-                    <button class="btn btn-outline-dark mr-2">Italic</button>
-                    <button class="btn btn-outline-dark mr-2">Underline</button>
-                    <button class="btn btn-outline-dark mr-2">Strikethrough</button>
-                    <button class="btn btn-outline-dark mr-2">Insert Image</button>
-                </div>
-            </div>
+    .notes-container {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      margin: 0 auto;
+      flex: 1;
+    }
+
+    .notes-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      background-color: #f0f0f0;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      margin-right: 20px;
+    }
+
+    .header-buttons button {
+      margin-right: 10px;
+    }
+
+    .main-content {
+      display: flex;
+      flex: 2;
+      /* Updated styles for horizontal mirroring */
+      flex-direction: row-reverse;
+    }
+
+    .notes-container2 {
+      flex: 2;
+      padding: 20px;
+      order: 1;
+    }
+
+    .notes-sidebar {
+      flex: 0,5;
+      padding: 20px;
+      background-color: #f0f0f0;
+    
+      order: 2;
+    }
+
+    .notes-nav button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    .notes-footer img {
+  margin-right: 10px;
+  border-radius: 50%; /* Make the image round */
+}
+
+    #AddPage {
+      margin-top: 100px;
+    }
+    #Save {
+      margin-left: 20px;
+    }
+
+    .notes-footer {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      background-color: #f0f0f0;
+      margin-top: auto;
+    }
+
+    .notes-footer img {
+      margin-right: 10px;
+    }
+
+    .notes-text {
+      margin-right: 10px;
+    }
+
+    .button {
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #0056b3;
+    }
+
+    .notes-textarea {
+      width: 100%;
+      height: 600px;
+      padding: 10px;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+    }
+
+    .notes-button11 {
+      background-color: #28a745;
+    }
+
+    .notes-button11:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="notes-container">
+    <header id="Top" data-role="Header" class="notes-header">
+      <div class="header-content">
+        <img alt="logo" src="{{ url_for('static', filename='images/SimpleNote_logo.png') }}" alt="SimpleNote Logo" width="150" height="100" class="logo" />
+        <div class="header-buttons">
+          <button type="button" id="Normal" class="button">Normal</button>
+          <button type="button" id="Bold" class="notes-button01 button">Bold</button>
+          <button type="button" id="Underline" class="button">Underline</button>
+          <button type="button" id="StrikeThrough" class="button">Strikethrough</button>
         </div>
+      </div>
+      <div data-role="MobileMenu" class="notes-mobile-menu"></div>
+    </header>
 
-        <!-- Seitenleiste für Boos -->
-        <div class="col-md-4">
-            <div class="list-group mb-4">
-                <a href="#" class="list-group-item list-group-item-action active">
-                    Book 1
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">Book 2</a>
-            </div>
-            <button class="btn btn-light">Add Book</button>
-        </div>
+    <div class="main-content">
+      <div class="notes-sidebar">
+        <nav class="notes-nav">
+          <svg viewBox="0 0 1024 1024" class="notes-icon" width="20" height="20">
+            <!-- Your path data here -->
+          </svg>
 
-        <!-- Seitenleiste für Pages -->
-        <div class="col-md-4">
-            <div class="list-group mb-4">
-                <a href="#" class="list-group-item list-group-item-action active">
-                    Page 1
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">Page 2</a>
-            </div>
-            <button class="btn btn-light">Add Page</button>
-        </div>
+          <button type="button" id="PageOne" class="notes-button04 button">Page One</button>
+          <button type="button" id="PageTwo" class="notes-button05 button">Page Two</button>
+          <button type="button" id="PageThree" class="notes-button06 button">Page Three</button>
+          <button type="button" id="PageFour" class="notes-button07 button">Page Four</button>
+          <button type="button" id="PageFive" class="notes-button08 button">Page Five</button>
+          <button type="button" id="AddPage" class="notes-button09 button">Add Page</button>
+        </nav>
+      </div>
 
-        <!-- Eingabefeld für Notess -->
-        <div class="col-md-6">
-            <textarea class="form-control mb-4" rows="20" placeholder="Write your notes here..."></textarea>
-        </div>
-
-        <!-- Button zum Ausloggen -->
-        <div class="col-md-2 text-left">
-            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#logoutModal">
-            </button>
-        </div>
-    </div>
-</div>
-
-<!-- Bestätigungsmeldung beim Ausloggen -->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="logoutModalLabel">Logout Confirmation</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                Are you sure you want to logout?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary">Logout</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-{% endblock %}
-
-<div>
-  <link href="./home.css" rel="stylesheet" />
-  <div class="home-container">
-    <div class="home-container1">
-      <img
-        src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/d187cedf-f9be-43d3-9d8a-d624d396dca3/0246c4ad-79e4-419d-98c7-123f813e2989?org_if_sml=18355&amp;force_format=original"
-        alt="image"
-        class="home-image"
-      />
-    </div>
-    <div class="home-sidebar">
-      <nav class="home-nav">
-        <svg viewBox="0 0 1024 1024" class="home-icon">
-          <path
-            d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
-          ></path>
-        </svg>
-        <span id="Book 1" class="home-text">Book 1</span>
-        <span id="Book 2" class="home-text01">Book 2</span>
-        <span id="Book 3" class="home-text02">Book 3</span>
-        <span id="Book 4" class="home-text03">Book 4</span>
-        <span id="Book 5">Book 5</span>
-      </nav>
-      <div class="home-profile">
-        <img
-          alt="image"
-          src="https://images.unsplash.com/photo-1562159278-1253a58da141?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDIyfHxtYW4lMjBwb3J0dHJhaXR8ZW58MHx8fHwxNjI3MjkzNTM1&amp;ixlib=rb-1.2.1&amp;w=200"
-          class="home-image1"
-        />
-        <div class="home-container2">
-          <span class="home-text05">John Doe</span>
-        </div>
-        <button type="button" class="button">Logout</button>
+      <div class="notes-container2">
+        <textarea placeholder="placeholder" class="notes-textarea textarea"></textarea>
       </div>
     </div>
-    <div class="home-container3"><div class="home-container4"></div></div>
-    <div class="home-container5">
-      <button type="button" class="home-button1 button">Save Notes </button>
-      <button type="button" class="home-button2 button">
-        <span>
-          <span>Next</span>
+
+    <footer class="notes-footer">
+      <img alt="image" src="{{ url_for('static', filename='images/SimpleNote_logo.png') }}" alt="SimpleNote Logo" width="100" height="100">
+      <span class="notes-text">John Doe</span>
+      <button type="button" id="Logout" class="button">Logout</button>
+      <button id="Save" type="button" class="notes-button11 button">
+        <span class="notes-text1">
+          <span>Save </span>
           <br />
         </span>
       </button>
-      <span class="home-text09">Book </span>
-      <button type="button" class="home-button3 button">back</button>
-    </div>
-    <div class="home-container6">
-      <textarea
-        placeholder="placeholder"
-        class="home-textarea textarea"
-      ></textarea>
-    </div>
+    </footer>
   </div>
-</div>
-  
+</body>
+
+</html>
