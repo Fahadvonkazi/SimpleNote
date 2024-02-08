@@ -20,36 +20,32 @@ Ali Ozeir
 {: toc }
 </details> 
 
-## Übersicht über die App-Architektur
-Die Web-App "SimpleNote" verwendet eine Architektur, bestehend aus der Datenbank, Nutzeroberfläche und Geschäftslogik. Die verschiedenen Schichten kommunizieren miteinander über das HTTP-Protokoll, indem sie Anfragen und Antworten miteinander austauschen. Die Nutzeroberfläche sendet Anfragen an die Geschäftslogik, welche die Anfrage verarbeitet und die entsprechenden Daten aus der Datenbank abruft oder speichert. Die Geschäftslogik sendet dann die benötigten Daten zurück an das Frontend, um sie den Benutzern zur Anzeige auf der Oberfläche bereitzustellen.
+## Overview of the App Architecture
+The web app "SimpleNote" utilizes an architecture consisting of the database, user interface, and business logic. The various layers communicate with each other via the HTTP protocol, exchanging requests and responses. The user interface sends requests to the business logic, which processes the request and retrieves or stores the corresponding data from the database. The business logic then sends the required data back to the frontend to display it to the users on the interface.
 
-### Datenbank
-In dieser Schicht wird SQLAlchemy verwendet, um den Zugriff auf die SQLite-Datenbank zu verwalten. SQLite wird als Datenbanksystem eingesetzt, da es eine einfache, relationale Datenbank ist. SQLAlchemy erleichtert die Interaktion mit der Datenbank, indem es eine objektorientierte Schnittstelle bereitstellt.
+### Database
+In this layer, SQLAlchemy is used to manage access to the SQLite database. SQLite is employed as the database system because it is a simple, relational database. SQLAlchemy facilitates interaction with the database by providing an object-oriented interface.
 
-### Nutzeroberfläche
-Die Nutzeroberfläche ist für die Interaktion mit dem Nutzenden der Anwendung zuständig. Dabei wird das Flask-Template und Jinja2 für die Erstellung der HTML-Pages verwendet. Des Weiteren hat dasa Team SimpleNote das Framework Bootstrap eingesetzt, um ein entspechendes Frontend zu gestalten.
+### User Interface
+The user interface is responsible for interacting with the user of the application. Flask templates and Jinja2 are used to create the HTML pages. Furthermore, the SimpleNote team has utilized the Bootstrap framework to design a corresponding frontend.
 
-### Geschäftslogik
-Diese Schicht ist zuständig für die Datenverarbeitung und die Ausführung der Geschäftslogik. Dabei wird Python in Kombination mit SQLAlchemy, um die Daten zu verarbeiten, verwendet.
+### Business Logic
+This layer is responsible for data processing and executing the business logic. Python is used in combination with SQLAlchemy to process the data.
 
+## Project Structure
+The project structure is as follows: In the main folder "SimpleNote," the file "app.py" creates the application. Additionally, the folder contains the packages described below. Moreover, external packages such as Flask-SQLAlchemy, Flask, and Flask-Login are utilized.
 
-
-## Projektstruktur
-Die Projektstruktur ist wie folgt aufgebaut: Im Hauptordner "SimpleNote" befindet sich die Datei "app.py", die die Anwendung erstellt. Zusätzlich enthält der Ordner die unten beschriebenen Pakete. Darüber hinaus gibt es externe Pakete wie Flask-SQLAlchemy, Flask und Flask-Login.
-
-### __init__.py
-Dieses Paket dient dazu, das Flask-Paket zu initialisieren und konfigurieren. Die Anwendung wird mit der SQLAlchemy-DB verbunden und registriert Blueprints für verschiedene Teile der Anwendung.
+### __ init __.py
+This package is used to initialize and configure the Flask package. The application is connected to the SQLAlchemy database, and blueprints are registered for various parts of the application.
 
 ### auth.py
-Das auth-Paket wird für die Autorisierung und Authentifizierung von Nutzenden benötigt. Es ennthält die Routess und Funktionen für den Login, die Registrierung und den Logout.
+The auth package is required for user authorization and authentication. It contains routes and functions for login, registration, and logout.
 
 ### forms.py
-Die Datei forms.py definiert verschiedene Formulare mithilfe von Flask-WTF und WTForms, die für die Verarbeitung von Eingaben des Nutzenden verwendet werden.
+The file forms.py defines various forms using Flask-WTF and WTForms, which are used to process user input.
 
 ### models.py
-Das models-Paket enthält Modelle, welche die Struktur der Daten in der Datenbannk festlegen. Damit können Daten in der Datenbank gespeichert sowie abgerufen werden.
+The models package contains models that define the structure of the data in the database. This allows data to be stored and retrieved from the database.
 
 ### views.py
-Das views-Paket enthält Routen und die logischen Funktionalitäten für die verschiedenen Ansichten der Webseite.
-
-
+The views package contains routes and logical functionalities for various views of the website.
