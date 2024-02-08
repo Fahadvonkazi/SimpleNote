@@ -46,7 +46,8 @@ The navigation proceeds as follows: The user first registers. Upon successful re
 
 ## Application Logic
 ! [Figure 1: App Behavior, Source: Own Illustration](assets/images/Appverhalten.png)
-![Figure 1: App Behavior, Source: Own Illustration](assets/images/Appverhalten.png)
+[Figure 1: App Behavior, Source: Own Illustration](docs/assets/images/Appverhalten.png)
+[Contribution guidelines for this project](docs/CONTRIBUTING.md)
 
 Figure 1 illustrates the behavior and relationships of the application. The processes are explained in more detail below:
 
