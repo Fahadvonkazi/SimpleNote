@@ -86,7 +86,7 @@ def login():
     return render_template('index.html', user=current_user)
 
 # Route für das Ausloggen von Benutzern
-@auth.route('/logout')
+@auth.route('/logout', methods=['GET', 'POST'])
 def logout():
     # Logge den aktuellen Benutzer aus
     logout_user()

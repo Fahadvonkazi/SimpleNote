@@ -7,15 +7,8 @@ nav_order: 4
 {: .label }
 [Jane Dane]
 
-# [Reference documentation]
+# Reference documentation
 {: .no_toc }
-
-{: .attention }
-> This page collects internal functions, routes with their functions, and APIs (if any).
-> 
-> See [Uber](https://developer.uber.com/docs/drivers/references/api) or [PayPal](https://developer.paypal.com/api/rest/) for exemplary high-quality API reference documentation.
->
-> You may delete this `attention` box.
 
 <details open markdown="block">
 {: .text-delta }
@@ -24,62 +17,243 @@ nav_order: 4
 {: toc }
 </details>
 
-## [Section / module]
+## Creating Flask App
 
-### `function_definition()`
+### create_app()
 
-**Route:** `/route/`
+**Route:** 
+none
 
-**Methods:** `POST` `GET` `PATCH` `PUT` `DELETE`
+**Methods:** 
+none
 
-**Purpose:** [Short explanation of what the function does and why]
+**Purpose:** 
+This function is responsible for creating the Flask application instance, configuring it with secret key and database URI, initializing the SQLAlchemy database instance, registering blueprints for different URLs, creating database models, initializing the login manager, and defining a function to load a user.
 
-**Sample output:**
-
-[Show an image, string output, or similar illustration -- or write NONE if function generates no output]
-
----
-
-## [Example, delete this section] Show to-do lists
-
-### `get_lists()`
-
-**Route:** `/lists/`
-
-**Methods:** `GET`
-
-**Purpose:** Show all to-do lists.
-
-**Sample output:**
-
-![get_lists() sample](../assets/images/fswd-intro_00.png)
+**Sample output:** 
+none
 
 ---
 
-### `get_list_todos(list_id)`
+## Register
 
-**Route:** `/lists/<int:list_id>`
+### @auth.route('/register')
 
-**Methods:** `GET`
+**Route:** 
+/register
 
-**Purpose:** Retrieve all to-do items of to-do list with ID `list_id` from database and present to user.
+**Methods:** 
+`GET` `POST`
+
+**Purpose:** 
+This route handles the registration process, accepting both GET and POST methods. Users can enter their username and password to create a new account. The application checks if the username already exists in the database and validates the password against specified criteria. Upon successful registration, the user is logged in and redirected to the notes.html which is the main page with a success message. Otherwise, an error message is displayed. Additionally, the register.html file is rendered and passes the current user as a variable to the template.
 
 **Sample output:**
-
-![get_list_todos() sample](../assets/images/fswd-intro_02.png)
+Browser shows: `Successfully logged in!`
 
 ---
 
-## [Example, delete this section] Insert sample data
+## Check Database
 
-### `run_insert_sample()`
+### @auth.route('/check_database')
 
-**Route:** `/insert/sample`
+**Route:** 
+'/check_database'
 
-**Methods:** `GET`
+**Methods:** 
+none
 
-**Purpose:** Flush the database and insert sample data set
+**Purpose:** 
+This route is for debugging purposes and checks the users stored in the database. It retrieves all users from the database and prints their information.
 
 **Sample output:**
+None 
 
+---
+
+## Login
+
+### @auth.route('/login')
+
+**Route:** 
+('/login')
+
+**Methods:** 
+`GET``POST`
+
+**Purpose:** 
+This route handles user login. It receives the username and password from the login form, checks if the user exists in the database, compares the hashed password, logs in the user if the credentials are correct, and redirects them to the notes page upon successful login.
+
+**Sample output:**
 Browser shows: `Database flushed and populated with some sample data.`
+
+---
+
+## Logout
+
+### @auth.route('/logout')
+
+**Route:** 
+('/logout')
+
+**Methods:** 
+`GET``POST`
+
+**Purpose:** 
+This route handles user logout. It logs out the current user and redirects them to the login page.
+
+**Sample output:**
+Browser shows: `Successfully logged out!`
+
+---
+
+## Notes
+
+### @views.route('/notes')
+
+**Route:** 
+('/notes')
+
+**Methods:** 
+`GET`
+
+**Purpose:** 
+This route renders the 'notes.html' template, which displays the notes for the current user.
+
+**Sample output:**
+Browser shows: Rendered 'notes.html' template with user's notes.
+
+---
+
+## Index
+
+### @views.route('/index')
+
+**Route:** 
+('/index')
+
+**Methods:** 
+`GET`
+
+**Purpose:** 
+This route renders the 'index.html' template.
+
+**Sample output:**
+Browser shows: Rendered 'index.html' template.
+
+---
+
+## Home
+
+### @views.route('/')
+
+**Route:** 
+('/')
+
+**Methods:** 
+`GET``POST`
+
+**Purpose:** 
+This route renders the 'notes.html' template, displaying the notes for the current user. It retrieves the notes from the database based on the current user's ID.
+
+**Sample output:**
+Browser shows: Rendered 'notes.html' template with user's notes.
+
+---
+
+## Hinzufügen einer Note
+
+### @views.route('/add_note')
+
+**Route:** 
+('/add_note')
+
+**Methods:** 
+`POST`
+
+**Purpose:** 
+This route handles the addition of a new note. It extracts the title and content from the request form, creates a new note object, adds it to the database, and redirects the user to the home page with a success message.
+
+**Sample output:**
+Redirect to main page with success message upon adding a note.
+
+---
+
+## Bearbeiten einer Note
+
+### @views.route('/edit_note/')
+
+**Route:** 
+('/edit_note')
+
+**Methods:** 
+`GET``POST`
+
+**Purpose:** 
+This route handles the editing of a note. It retrieves the note from the database, allows the user to edit the title and content, updates the note in the database, and redirects the user to the home page with a success message.
+
+**Sample output:**
+Rendered 'notes.html' template with user's notes.
+
+---
+
+## Löschen einer Note
+
+### @views.route('/delete_note')
+
+**Route:** 
+('/delete_note/')
+
+**Methods:** 
+`GET``POST`
+
+**Purpose:** 
+This route handles the deletion of a note. It retrieves the note from the database, deletes it, and redirects the user to the notes page with a success message.
+
+**Sample output:**
+Redirect to notes pages with success message upon deleting a note.
+
+---
+
+## RegistrationForm
+
+### class RegistrationForm(FlaskForm)
+
+**Purpose:** 
+This class defines a FlaskForm for user registration. It includes fields for username, password, and confirm password, along with validators to ensure that the input is required and meets certain length requirements. The form also includes validation to ensure that the password and confirm password fields match.
+
+---
+
+## LoginForm
+
+### class LoginForm(FlaskForm)
+
+**Purpose:** 
+This class defines a FlaskForm for user login. It includes fields for username and password, along with validators to ensure that the input is required.
+
+---
+
+## NoteForm
+
+### class NoteForm(FlaskForm)
+
+**Purpose:** 
+This class defines a FlaskForm for creating a note. It includes fields for title and content, along with validators to ensure that the input is required and meets certain length requirements.
+
+---
+
+## NoteForm
+
+### class NoteForm(FlaskForm)
+
+**Purpose:** 
+This class defines a FlaskForm for creating a note. It includes fields for title and content, along with validators to ensure that the input is required and meets certain length requirements.
+
+---
+
+## EditNoteForm
+
+### class EditNoteForm(FlaskForm)
+
+**Purpose:** 
+This class defines a FlaskForm for editing a note. It includes fields for the ID of the note (hidden), title, and content, along with validators to ensure that the input is required and meets certain length requirements.
