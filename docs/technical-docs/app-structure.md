@@ -5,9 +5,12 @@ nav_order: 1
 ---
 
 {: .label }
-[Jane Dane]
+Fahad von Kazi
 
-# [App structure, incl. context]
+{: .label }
+Ali Ozeir
+
+# App structure, incl. context
 {: .no_toc }
 
 <details open markdown="block">
@@ -16,3 +19,18 @@ nav_order: 1
 + ToC
 {: toc }
 </details> 
+
+## Übersicht über die App-Architektur
+Die Web-App "SimpleNote" verwendet eine Architektur, bestehend aus der Benutzeroberfläche, Logik und Datenbank.
+
+### Benutzeroberfläche
+Meep
+
+### Logik
+Meep
+
+### Datenbank
+Meep
+
+## Projektverzeichnisstruktur
+ads

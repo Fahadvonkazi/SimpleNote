@@ -4,10 +4,10 @@ nav_order: 1
 ---
 
 {: .label }
-[Fahad von Kazi]
+Fahad von Kazi
 
 {: .label }
-[Ali Ozeir]
+Ali Ozeir
 
 # Value proposition
 {: .no_toc }
