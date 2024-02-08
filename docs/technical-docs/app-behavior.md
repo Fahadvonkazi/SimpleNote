@@ -45,6 +45,7 @@ Additionally, the app provides text formatting features to format the entered te
 The navigation proceeds as follows: The user first registers. Upon successful registration, the user is automatically redirected to the log-in page and asked to log in. After successful login, the user is automatically redirected to the main page, where the user can create and edit their notes.
 
 ## Application Logic
+! [Figure 1: App Behavior, Source: Own Illustration](assets/images/Appverhalten.png)
 ![Figure 1: App Behavior, Source: Own Illustration](assets/images/Appverhalten.png)
 
 Figure 1 illustrates the behavior and relationships of the application. The processes are explained in more detail below:
