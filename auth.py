@@ -18,16 +18,16 @@ def register():
         if existing_user:
             flash('Der Benutzername ist bereits vergeben. Bitte wählen Sie einen anderen.', 'error')
         else:
-            new_user = User(username=form.username.data, password=form.password.data)
+            # Passwort hashen
+            hashed_password = generate_password_hash(form.password.data, method='pbkdf2:sha256')
+            # Neuen Benutzer erstellen und zum Datenbank hinzufügen
+            new_user = User(username=form.username.data, password=hashed_password)
             db.session.add(new_user)
             db.session.commit()
-
             flash('Erfolgreich registriert! Bitte einloggen.', 'success')
             return redirect(url_for('views.index'))
 
     return render_template('register.html', form=form, signup_success=False)
-
-# Importe und Konfigurationen ...
 
 @auth.route('/check_database')
 def check_database():
@@ -40,8 +40,6 @@ def check_database():
 
     return "Überprüfung der Datenbank abgeschlossen."
 
-# Weitere Routen und Konfigurationen ...
-
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
@@ -49,6 +47,8 @@ def login():
         username = request.form.get('username')
         password = request.form.get('password')
 
+        print(f"Received login request for username: {username}, password: {password}")
+        
         user = User.query.filter_by(username=username).first()
 
         if not user:
@@ -60,13 +60,11 @@ def login():
             if check_password_hash(user.password, password):
                 login_user(user)
                 flash('Erfolgreich eingeloggt!', category='success')
-                print(session)  # Debug-Ausgabe für die Session
                 return redirect(url_for('views.notes'))
             else:
                 flash('Falsches Passwort! Versuchen Sie es erneut.', category='error')
 
     return render_template('index.html', user=current_user)
-
 
 
 @auth.route('/logout')
