@@ -6,7 +6,7 @@ nav_order: 0
 # Team SimpleNote
 
 ## Introduction
-As part of the "Entwicklung von Web-Anwendungen" module, the project team was tasked with developing a web app. The team decided to create an application that allows users to easily take notes and organize their thoughts. Users can sort their ideas in books in pages after logging in. 
+As part of the "Entwicklung von Web-Anwendungen" module, the project team was tasked with developing a web app. The team decided to create an application that allows users to take notes and organize their thoughts. Users can sort their ideas in books in pages after logging in. 
 
 ## Goals
 Our group aims to start the project early and work on it continuously. We aim to develop a fully functional web application with a user-friendly interface. Additionally, we want to learn and inspire each other in building and designing a website collaboratively. We aim to delve into Python intensively and learn more about it, although we both already have experience with it. Fahad wants to learn more about user interfaces, databases and working with API's. Ali also aims to gain more experience with Python.
@@ -27,10 +27,11 @@ Matr.-Nr.
 ### Ali Ozeir
 
 About
-: Some info about Ali
+: I'm Ali, and I'm a coffee lover. I also have various interests, ranging from doing sports, travelling and coding.   
 
 Matr.-Nr.
-: 77211XXXXXX
+: 77211922268
+
 
 ## Eidesstattliche Erklärung
 
