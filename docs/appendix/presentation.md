@@ -13,19 +13,7 @@ Ali Ozeir
 # Sources
 {: .no_toc }
 
-On this page, there is a link to our presentation and UI screens.
+On this page, there is a link to our presentation.
 
 ## Link
-[Our Presentation](docs/assets/images/SimpleNote.pdf)
-
-## UI-Screens
-Here are planned UI-Screens of our app.
-
-### Login-Page 
-[Login-Page](docs/assets/images/login.png)
-
-### Register-Page 
-[Register-Page](docs/assets/images/register.png)
-
-### Main-Page 
-[Main-Page](docs/assets/images/main.png)
+[Presentation](docs/assets/images/SimpleNote.pdf)
