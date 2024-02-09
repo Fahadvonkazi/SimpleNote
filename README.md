@@ -1,7 +1,7 @@
 # SimpleNote
 
-Im Rahmen des Moduls "Entwicklung von Web-Anwendungen" erhielt die Projektgruppe die Aufgabenstellung
-eine Web-Anwendung zu entwickeln. [Hier die Projektidee hinschreiben]
+As part of the “Entwicklung von Web-Anwendungen” module, the project team was tasked with developing a web app. The team decided to create an application that allows users to easily take notes and organize their thoughts. Users can sort their ideas in books in pages after logging in.
+
 
 ## Inhaltsverzeichnis
 - [SimpleNote](#simplenote)
@@ -27,11 +27,11 @@ werden.
 
 ## Anforderungen
 Um das Projekt erfolgreich ausführen zu können, sind folgende Anforderungen zu erfüllen: 
-1. Eine aktuelle Version von Python (mindestens ?)
+1. Eine aktuelle Version von Python (mindestens 3.12.0)
 2. Die erfolgreiche Installation
 3. Ein Quelltext-Editor (z.B. Visual Studio Code, Pycharm)
 4. Ein gültiger API-Key für die Google API (bereits vorhanden ohne IP-Restriction)
-5. Ein Webbrowser (z.B. Chrome, Firefox, Safari)
+5. Ein Webbrowser (z.B. Chrome, Firefox; Safari)
 
 ## Mitwirkende
 Fahad Nur-E von Kazi, Ali Ozeir
