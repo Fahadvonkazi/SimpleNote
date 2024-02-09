@@ -13,16 +13,13 @@ Ali Ozeir
 # UI-Screens
 {: .no_toc }
 
-On this page, the UI screens are linked and listed.
+On this page, here are the planned UI-Screens of our web-app.
 
-## UI-Screens
-Here are planned UI-Screens of our web-app.
-
-### Login-Page 
+## Login-Page 
 [Login-Page](docs/assets/images/login.png)
 
-### Register-Page 
+## Register-Page 
 [Register-Page](docs/assets/images/register.png)
 
-### Main-Page 
+## Main-Page 
 [Main-Page](docs/assets/images/main.png)
