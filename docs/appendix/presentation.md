@@ -17,3 +17,6 @@ On this page, there is a link to our presentation.
 
 ## Link
 [Presentation](docs/assets/images/SimpleNote.pdf)
+[Presentation](docs/assets/images/SimpleNote.pdf)
+[Presentation](path/to/SimpleNote.pdf)
+
