@@ -41,6 +41,7 @@ The team opted to utilize SQLite as the relational database. SQLite was chosen d
 **Consider alternative databases like MySQL or PostgreSQL**
   - *Pro:* Provides potentially greater scalability and robustness
   - *Con:* May introduce additional complexity and configuration overhead
+  
 **Evaluate other ORM frameworks like Django ORM**
   - *Pro:* Offers alternative features and functionalities
   - *Con:* Might require adaptation to project requirements
