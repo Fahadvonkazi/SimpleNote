@@ -88,10 +88,11 @@ Implementation of user login is necessary to grant access to user data, e.g. not
 We collectively opted for Flask-Login as the framework for implementing a straightforward login system. This choice provides methods for login, logout, user loading, and login status verification.
 
 ### Regarded options
-Evaluate alternative authentication frameworks
+**Evaluate alternative authentication frameworks**
   - *Pro:* Potential for finding a framework better suited to project requirements
   - *Con:* Time-consuming evaluation process, potential learning curve for new framework
-Implement custom authentication logic without using a framework (too complex)
+  
+**Implement custom authentication logic without using a framework (too complex)**
   - *Pro:* Full control over authentication process, tailored to project needs
   - *Con:* Highly complex and time-consuming to implement, potential for security vulnerabilities without established framework
   
@@ -118,10 +119,11 @@ auth.py: Registration and login logic are stored in a separate file.
 forms.py: Forms are imported and created here.
 
 ### Regarded options
-Keep all routes in a single file
+**Keep all routes in a single file**
   - *Pro:* Simplifies file management
   - *Con:* May lead to a large, unwieldy file and hinder code readability and maintenance
-Segregate routes based on functionality
+
+**Segregate routes based on functionality**
   - *Pro:* Improves code organization and maintainability
   - *Con:* May require additional file management overhead
 
@@ -144,7 +146,7 @@ The login page and register page have very similar elements on the GUI, which re
 The SimpleNote team chose to create an HTML base template, incorporating common elements and Bootstrap imports across screens. Other HTML templates will extend base.html, reducing code duplication and simplifying the structure.
 
 ### Regarded options
-Using a single HTML base template with shared elements
+**Using a single HTML base template with shared elements**
   *Pro:* Reduces code duplication, simplifies maintenance, and ensures consistency
   *Con:* May limit customization options for individual pages
 
@@ -167,13 +169,15 @@ Improving user navigation after registration and login for support and a more se
 We decided to automatically redirect users upon successful registration or login, supported by green or red banners for success or failure. If the banner is red, there will be a flash and a reason appears why the process didn't function correctly, e.g. "Log-In not successfull".
 
 ### Regarded options
-Implement manual navigation prompts after registration and login
+**Implement manual navigation prompts after registration and login**
   - *Pro:* Complete control over navigation flow
   - *Con:* Increased user effort, potential for inconsistencies or errors in navigation prompts
-Explore user authentication libraries for navigation assistance
+
+**Explore user authentication libraries for navigation assistance**
   - *Pro:* Utilizes established libraries for navigation, potentially reducing development time
   - *Con:* Dependency on external libraries, may require customization to fit project needs
-Design custom navigation elements for a tailored user experience
+
+**Design custom navigation elements for a tailored user experience**
   - *Pro:* Allows for highly customized and intuitive navigation
   - *Con:* Increased development time and complexity, potential for inconsistencies without careful design and testing
 
@@ -196,7 +200,7 @@ There was no efficient method in place to store the notes, leading to uncertaint
 Team SimpleNote considered implementing a "Save-Button" to allow users the option to store their notes when desired, providing a straightforward solution to address the problem.
 
 ### Regarded options
-Implementing automatic periodic saving of notes without user intervention
+**Implementing automatic periodic saving of notes without user intervention**
   - *Pro:* Ensures data persistence and minimizes the risk of data loss due to user oversight
   - *Con:* May increase server load and resource usage, potentially impacting performance
 
@@ -222,6 +226,7 @@ Recognizing the limitations of time and resources, the team opted to streamline 
 **Keep all the other planned functionalities intact**
   - *Pro:* Ensures the fulfillment of the project's original vision
   - *Con:* May lead to project delays and increased complexity
+
 **Prioritize functionalities and discard less essential ones to meet the project deadline**
   - *Pro:* Allows a more focused and achievable development approach
   - *Con:* Some planned features may need to be sacrificed, potentially impacting the user experience
