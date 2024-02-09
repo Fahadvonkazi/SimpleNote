@@ -21,7 +21,6 @@ Ali Ozeir
 </details>
 
 ## User Functionalities
-The following functionalities are available to the user:
 
 ### Log-in
 The application allows users to log in using their credentials to access additional functionalities and view their notes.

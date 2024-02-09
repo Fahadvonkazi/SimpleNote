@@ -9,7 +9,7 @@ Fahad von Kazi
 {: .label }
 Ali Ozeir
 
-# [Design decisions]
+# Design decisions
 {: .no_toc }
 
 <details open markdown="block">
@@ -220,7 +220,7 @@ Updated
 The project team encountered a challenge due to the ambitious scope initially set for the application.
 
 ### Decision
-Recognizing the limitations of time and resources, the team opted to streamline the project by scaling back certain features, such as the planned integration of books. This decision was made collaboratively to ensure project feasibility within the given constraints.
+Recognizing the limitations of time and resources, the team opted to streamline the project by scaling back certain features, such as the planned integration of books and save notes. This decision was made collaboratively to ensure project feasibility within the given constraints. If the project were to extend by an additional four weeks, our primary focus would be on integrating the functionality related to organizing books and saving notes.
 
 ### Regarded options
 **Keep all the other planned functionalities intact**

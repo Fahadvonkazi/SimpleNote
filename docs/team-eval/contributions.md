@@ -10,7 +10,7 @@ Fahad von Kazi
 {: .label }
 Ali Ozeir
 
-# [Summary of individual contributions]
+# Summary of individual contributions
 {: .no_toc }
 
 <details open markdown="block">

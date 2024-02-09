@@ -3,6 +3,12 @@ title: Home
 nav_order: 0
 ---
 
+{: .label }
+Fahad von Kazi
+
+{: .label }
+Ali Ozeir
+
 # Team SimpleNote
 
 ## Introduction
