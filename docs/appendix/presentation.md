@@ -10,7 +10,7 @@ Fahad von Kazi
 {: .label }
 Ali Ozeir
 
-# Sources
+# Presentation
 {: .no_toc }
 
 On this page, there is a link to our presentation.

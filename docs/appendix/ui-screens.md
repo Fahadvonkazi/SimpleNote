@@ -10,13 +10,13 @@ Fahad von Kazi
 {: .label }
 Ali Ozeir
 
-# Sources
+# UI-Screens
 {: .no_toc }
 
 On this page, the UI screens are linked and listed.
 
 ## UI-Screens
-Here are planned UI-Screens of our app.
+Here are planned UI-Screens of our web-app.
 
 ### Login-Page 
 [Login-Page](docs/assets/images/login.png)
