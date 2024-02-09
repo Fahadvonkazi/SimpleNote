@@ -2,6 +2,8 @@
 
 As part of the “Entwicklung von Web-Anwendungen” module, the project team was tasked with developing a web app. The team decided to create an application that allows users to easily take notes and organize their thoughts. Users can sort their ideas in books in pages after logging in.
 
+Our idea is to create SimpleNote, a user-friendly note-taking web application. It combines ease of use with effective functionality, allowing users to capture thoughts, organize ideas and information. Users can add, edit, and delete notes and employ simple text formatting. The application introduces a framework with books and pages, providing an environment for brainstorming and knowledge documentation.
+
 
 ## Inhaltsverzeichnis
 - [SimpleNote](#simplenote)
