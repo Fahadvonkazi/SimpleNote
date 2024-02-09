@@ -200,6 +200,24 @@ Rendered 'notes.html' template with user's notes.
 
 ---
 
+## Hinzufügen einer Page
+
+### addPage()  
+
+**Route:** 
+none
+
+**Methods:** 
+none
+
+**Purpose:** 
+An alert is displayed when the "Add Page" button is clicked, suggesting an upgrade to unlock features.
+
+**Sample output:**
+Alert is shown.
+
+---
+
 ## Löschen einer Note
 
 ### @views.route('/delete_note')
@@ -251,3 +269,41 @@ This class defines a FlaskForm for creating a note. It includes fields for title
 
 **Purpose:** 
 This class defines a FlaskForm for editing a note. It includes fields for the ID of the note, title, and content, along with validators to ensure that the input is required and meets certain length requirements.
+
+---
+
+## Display Selected Placeholder
+
+### showPlaceholder(placeholderNumber) 
+
+**Route:** 
+none
+
+**Methods:** 
+none
+
+**Purpose:** 
+This function is responsible for displaying the selected placeholder while hiding others. It also makes the "Save" button visible.
+
+**Sample output:**
+Make one place holder visible.
+
+--- 
+
+## Update Text Format
+
+### updateText(format) 
+
+**Route:** 
+none
+
+**Methods:** 
+none
+
+**Purpose:** 
+This function is used to update the text in the active placeholder based on the selected text format (Normal, Bold, Underline, StrikeThrough).
+
+**Sample output:**
+Change text format.
+
+--- 
