@@ -18,13 +18,13 @@ On this page, there is a link to our presentation and UI screens.
 [Our Presentation](docs/assets/images/SimpleNote.pdf)
 
 ## UI-Screens
-Here are the UI-Screens of our app.
+Here are planned UI-Screens of our app.
 
 ### Login-Page 
-[Login-Page](docs/assets/images/SimpleNote.pdf)
+[Login-Page](docs/assets/images/login.png)
 
 ### Register-Page 
-[Register-Page](docs/assets/images/SimpleNote.pdf)
+[Register-Page](docs/assets/images/register.png)
 
 ### Main-Page 
-[Main-Page](docs/assets/images/SimpleNote.pdf)
+[Main-Page](docs/assets/images/main.png)
