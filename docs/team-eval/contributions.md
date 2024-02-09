@@ -5,7 +5,10 @@ nav_order: 4
 ---
 
 {: .label }
-[Jane Dane]
+Fahad von Kazi
+
+{: .label }
+Fahad von Kazi
 
 # [Summary of individual contributions]
 {: .no_toc }
@@ -17,16 +20,23 @@ nav_order: 4
 {: toc }
 </details>
 
-## [Jane Dane]
+## Fahad von Kazi
 
 Contributions
-: Jane's first contribution
-: Jane's second contribution
-: ...
+: Planung/Ideen (Fokus Appstruktur und Data Model)
+: Präsentation 
+: Entwicklung Frontend (Login, Register)
+: Entwicklung Backend (Fokus Login, Register)
+: Datenbankanbindung (Speicherung der Login-Daten)
+: Login
+: Projektdokumentation
 
-## [Joe Doe]
+## Ali Ozeir
 
 Contributions
-: Joe's first contribution
-: Joe's second contribution
-: ...
+: Planung/Ideen (Fokus Appverhalten und Navigation)
+: Präsentation
+: Entwicklung Frontend (Notes)
+: Entwicklung Backend (Fokus Notes)
+: Datenbankanbindung (Speicherung der Notes)
+: Projektdokumentation
