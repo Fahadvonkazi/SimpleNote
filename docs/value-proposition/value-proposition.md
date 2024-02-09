@@ -20,7 +20,8 @@ Ali Ozeir
 </details>
 
 ## Complete Value Proposition
-For individuals such as students, professionals or creative thinkers who need an user-friendly note-taking tool, SimpleNote is a app with basic note-taking capabilities that assists by offering simple functionalities without the of distraction of numerous possibilities.
+{: .info }
+> For individuals such as students, professionals or creative thinkers who need an user-friendly note-taking tool, SimpleNote is a app with basic note-taking capabilities that assists by offering simple functionalities without the of distraction of numerous possibilities.
 
 ## The problem
 Many people struggle to find a user-friendly note-taking tool for collecting ideas and brainstorming that offers simplicity without the distraction of excessive and unnecessary features.
