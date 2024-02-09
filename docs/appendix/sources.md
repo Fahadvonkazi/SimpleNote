@@ -1,5 +1,6 @@
 ---
 title: Sources
+parent: Appendix
 nav_order: 3
 ---
 
