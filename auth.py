@@ -94,3 +94,35 @@ def logout():
     # Gib eine Erfolgsmeldung aus und leite Benutzer zur Login Seite weiter.
     flash('Successfully logged out!', category='success')
     return redirect(url_for('auth.login'))
+
+'''
+### Kommentierter Code für die Weiterentwicklung im nächsten Sprint: Grundidee (noch nicht funktionsfähig) ###
+
+from flask import render_template, redirect, url_for
+from . import db, auth  # Replace 'your_flask_app' with the actual name of your Flask application
+from .models import Note
+from .forms import NoteForm
+
+@auth.route('/create_note', methods=['GET', 'POST'])
+@login_required  # Assuming you want to require login to create a note
+def create_note():
+    form = NoteForm()
+
+    if form.validate_on_submit():
+        # Create a new Note instance and save it to the database
+        new_note = Note(
+            placeholder1=form.placeholder1.data,
+            placeholder2=form.placeholder2.data,
+            placeholder3=form.placeholder3.data,
+            placeholder4=form.placeholder4.data,
+            placeholder5=form.placeholder5.data,
+            user_id=current_user.id  # Assuming you have a user ID, replace it with the actual user ID
+        )
+
+        db.session.add(new_note)
+        db.session.commit()
+
+        return redirect(url_for('views.index'))  # Redirect to the index page or wherever you want to go after saving the note
+
+    return render_template('create_note.html', form=form)
+    '''

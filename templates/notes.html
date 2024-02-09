@@ -6,141 +6,151 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./notesStyle.css" rel="stylesheet">
   <style>
-  
-    body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  }
+          body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-  .notes-container {
-      display: flex;
-      flex-direction: column;
-      width: 50%;
-      margin: 0 auto;
-      flex: 1;
-    }
+        .notes-container {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            margin: 0 auto;
+            flex: 1;
+        }
 
-    .notes-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px;
-      background-color: #f0f0f0;
-    }
+        .notes-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
 
-    .header-content {
-      display: flex;
-      align-items: center;
-    }
+        .header-content {
+            display: flex;
+            align-items: center;
+        }
 
-    .logo {
-      margin-right: 20px;
-    }
+        .logo {
+            margin-right: 20px;
+        }
 
-    .header-buttons button {
-      margin-right: 10px;
-    }
+        .header-buttons button {
+            margin-right: 10px;
+        }
 
-    .main-content {
-      display: flex;
-      flex: 2;
-      /* Updated styles for horizontal mirroring */
-      flex-direction: row-reverse;
-    }
+        .main-content {
+            display: flex;
+            flex: 2;
+            flex-direction: row-reverse;
+        }
 
-    .notes-container2 {
-      flex: 2;
-      padding: 20px;
-      order: 1;
-    }
+        .notes-container2 {
+            flex: 2;
+            padding: 20px;
+            order: 1;
+        }
 
-    .notes-sidebar {
-      flex: 0,5;
-      padding: 20px;
-      background-color: #f0f0f0;
-    
-      order: 2;
-    }
+        .notes-container2 .placeholder {
+            display: none;
+        }
+        
 
-    .notes-nav button {
-      display: block;
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      text-align: left;
-    }
+        .notes-sidebar {
+            flex: 0.5;
+            padding: 20px;
+            background-color: #f0f0f0;
+            order: 2;
+        }
 
-    .notes-footer img {
-  margin-right: 10px;
-  border-radius: 50%; /* Make the image round */
-}
+        .notes-nav button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
 
-    #AddPage {
-      margin-top: 100px;
-    }
-    #Save {
-      margin-left: 20px;
-    }
+        #AddPage {
+            margin-top: 100px;
+        }
 
-    .notes-footer {
-      display: flex;
-      align-items: center;
-      padding: 10px;
-      background-color: #f0f0f0;
-      margin-top: auto;
-    }
+        #Save {
+            margin-left: 20px;
+        }
 
-    .notes-footer img {
-      margin-right: 10px;
-    }
+        .notes-footer {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #f0f0f0;
+            margin-top: auto;
+        }
 
-    .notes-text {
-      margin-right: 10px;
-    }
+        .notes-footer img {
+            margin-right: 10px;
+            border-radius: 50%;
+        }
 
-    .button {
-      padding: 10px;
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-    }
+        .notes-text {
+            margin-right: 10px;
+        }
 
-    .button:hover {
-      background-color: #0056b3;
-    }
+        .button {
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
 
-    .notes-textarea {
-      width: 100%;
-      height: 600px;
-      padding: 10px;
-      box-sizing: border-box;
-      margin-bottom: 20px;
-    }
+        .button:hover {
+            background-color: #0056b3;
+        }
 
-    .notes-button11 {
-      background-color: #28a745;
-    }
+        .notes-textarea {
+            width: 100%;
+            height: 600px;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
 
-    .notes-button11:hover {
-      background-color: #218838;
-    }
-  </style>
+        .notes-button11 {
+            background-color: #28a745;
+        }
+
+        .notes-button11:hover {
+            background-color: #218838;
+        }
+
+        #Save {
+          display: none;
+          }
+
+    </style>
+
 </head>
 
 <body>
+
+
   <div class="notes-container">
     <header id="Top" data-role="Header" class="notes-header">
       <div class="header-content">
         <img alt="logo" src="{{ url_for('static', filename='images/SimpleNote_logo.png') }}" alt="SimpleNote Logo" width="150" height="100" class="logo" />
         <div class="header-buttons">
-          <button type="button" id="Normal" class="button">Normal</button>
-          <button type="button" id="Bold" class="notes-button01 button">Bold</button>
-          <button type="button" id="Underline" class="button">Underline</button>
-          <button type="button" id="StrikeThrough" class="button">Strikethrough</button>
+        
+      <!--Button für den text formatierung -->
+          <button type="button" id="Normal" class="button" onclick="updateText('Normal')">Normal</button>
+          <button type="button" id="Bold" class="notes-button01 button" onclick="updateText('Bold')">Bold</button>
+          <button type="button" id="Underline" class="button" onclick="updateText('Underline')">Underline</button>
+          <button type="button" id="StrikeThrough" class="button" onclick="updateText('StrikeThrough')">Strikethrough</button>
+
         </div>
       </div>
       <div data-role="MobileMenu" class="notes-mobile-menu"></div>
@@ -150,35 +160,124 @@
       <div class="notes-sidebar">
         <nav class="notes-nav">
           <svg viewBox="0 0 1024 1024" class="notes-icon" width="20" height="20">
-            <!-- Your path data here -->
           </svg>
-
-          <button type="button" id="PageOne" class="notes-button04 button">Page One</button>
-          <button type="button" id="PageTwo" class="notes-button05 button">Page Two</button>
-          <button type="button" id="PageThree" class="notes-button06 button">Page Three</button>
-          <button type="button" id="PageFour" class="notes-button07 button">Page Four</button>
-          <button type="button" id="PageFive" class="notes-button08 button">Page Five</button>
-          <button type="button" id="AddPage" class="notes-button09 button">Add Page</button>
-        </nav>
+          
+      <!--Buttonsfür den pages -->
+          <button type="button" id="PageOne" class="notes-button04 button" onclick="showPlaceholder(1)">Page One</button>
+          <button type="button" id="PageTwo" class="notes-button05 button" onclick="showPlaceholder(2)">Page Two</button>
+          <button type="button" id="PageThree" class="notes-button06 button" onclick="showPlaceholder(3)">Page Three</button>
+          <button type="button" id="PageFour" class="notes-button07 button" onclick="showPlaceholder(4)">Page Four</button>
+          <button type="button" id="PageFive" class="notes-button08 button" onclick="showPlaceholder(5)">Page Five</button>
+          <button type="button" id="AddPage" class="notes-button09 button" onclick="addPage()">Add Page</button>
+         
+          </nav>
       </div>
-
+      <!--Platz halter für den pages -->
+     
       <div class="notes-container2">
-        <textarea placeholder="placeholder" class="notes-textarea textarea"></textarea>
+     <textarea name="placeholder1" id="placeholder1" placeholder="Placeholder 1" class="notes-textarea textarea placeholder"></textarea>
+      <textarea name="placeholder2" id="placeholder2" placeholder="Placeholder 2" class="notes-textarea textarea placeholder"></textarea>
+      <textarea name="placeholder3" id="placeholder3" placeholder="Placeholder 3" class="notes-textarea textarea placeholder"></textarea>
+      <textarea name="placeholder4" id="placeholder4" placeholder="Placeholder 4" class="notes-textarea textarea placeholder"></textarea>
+      <textarea name="placeholder5" id="placeholder5" placeholder="Placeholder 5" class="notes-textarea textarea placeholder"></textarea>
       </div>
     </div>
-
+    <!--  logout button und save button-->
     <footer class="notes-footer">
-      <img alt="image" src="{{ url_for('static', filename='images/SimpleNote_logo.png') }}" alt="SimpleNote Logo" width="100" height="100">
-      <span class="notes-text">John Doe</span>
-      <button type="button" id="Logout" class="button">Logout</button>
-      <button id="Save" type="button" class="notes-button11 button">
-        <span class="notes-text1">
-          <span>Save </span>
-          <br />
-        </span>
-      </button>
-    </footer>
+    <img alt="image" src="{{ url_for('static', filename='images/SimpleNote_logo.png') }}" alt="SimpleNote Logo" width="100" height="100">
+    <span class="notes-text">John Doe</span>
+    <button type="button" id="Logout" class="button">Logout</button>
+    
+    <button id="Save" type="button" class="notes-button11 button">
+        <span class="notes-text1">Save</span>
+    </button>
+</footer>
+
+
   </div>
+
+
+
+  <script>
+        function showPlaceholder(placeholderNumber) {
+            // Alle platzhalter ausblenden
+            for (let i = 1; i <= 5; i++) {
+                document.getElementById(`placeholder${i}`).style.display = 'none';
+            }
+
+            // ausgewählte platz halter anzeigen
+            document.getElementById(`placeholder${placeholderNumber}`).style.display = 'block';
+
+            document.getElementById('Save').style.display = 'block';
+        }
+
+        function addPage() {
+            console.log("Add Page clicked");
+        }
+    </script>
+
+    <script type="text/javascript">
+    //path to logout
+document.getElementById("Logout").addEventListener("click", function() {
+    window.location.href = "{{ url_for('auth.logout') }}";
+});
+</script>
+
+<script>
+        function addPage() {
+            alert("Upgrade to premium to unlock all features!");
+        }
+        
+</script>
+
+
+
+<script>
+ // Das richtige platzhalter anzeigen  entsprechen der selected page
+    let activePlaceholder = 1;
+    function showPlaceholder(placeholderNumber) {
+        
+        for (let i = 1; i <= 5; i++) {
+            document.getElementById(`placeholder${i}`).style.display = 'none';
+        }
+
+        
+        document.getElementById(`placeholder${placeholderNumber}`).style.display = 'block';
+        activePlaceholder = placeholderNumber;
+
+        document.getElementById('Save').style.display = 'block';
+    }
+// Popup Alert
+    function addPage() {
+        alert("Upgrade to premium to unlock all features!");
+    }
+
+    //Formatierungs des  Texts im Platzhalter
+    function updateText(format) {
+        const placeholder = document.getElementById(`placeholder${activePlaceholder}`);
+        const currentText = placeholder.value;
+
+        switch (format) {
+            case 'Normal':
+                placeholder.value = currentText;
+                break;
+            case 'Bold':
+                placeholder.value = `**${currentText}**`;
+                break;
+            case 'Underline':
+                placeholder.value = `_${currentText}_`;
+                break;
+            case 'StrikeThrough':
+                placeholder.value = `~~${currentText}~~`;
+                break;
+            default:
+                break;
+        }
+    }
+</script>
+
+
+
 </body>
 
 </html>

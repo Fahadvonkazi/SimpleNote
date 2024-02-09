@@ -30,4 +30,22 @@ class EditNoteForm(FlaskForm):
     submit = SubmitField('Update')
 
 
+'''
+### Kommentierter Code für die Weiterentwicklung im nächsten Sprint: Grundidee (noch nicht funktionsfähig) ###
+
+from flask_wtf import FlaskForm
+from wtforms.fields import TextAreaField, SubmitField
+from wtforms.validators import InputRequired
+
+class NoteForm(FlaskForm):
+    placeholder1 = TextAreaField('Placeholder 1', validators=[InputRequired()])
+    placeholder2 = TextAreaField('Placeholder 2', validators=[InputRequired()])
+    placeholder3 = TextAreaField('Placeholder 3', validators=[InputRequired()])
+    placeholder4 = TextAreaField('Placeholder 4', validators=[InputRequired()])
+    placeholder5 = TextAreaField('Placeholder 5', validators=[InputRequired()])
+    submit = SubmitField('Save')
+    '''
+
+
+
 
