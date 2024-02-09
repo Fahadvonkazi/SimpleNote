@@ -20,7 +20,6 @@ Our idea is to create SimpleNote, a user-friendly note-taking web application. I
 4. Importieren Sie das sämtliche Projekt
 5. Starten Sie die Anwendung im Terminal: flask run
 6. Öffnen Sie einen Webbrowser und geben Sie die URL 'http://localhost:5000' ein
-7. Fügen Sie die Beispieldaten ein indem Sie die URL 'http://localhost:5000/insert_sample' eingeben
 
 ## Verwendung
 Bitte beachten Sie, dass die Anwendung bisher nur für den Einsatz auf dem lokalen Computer entwickelt

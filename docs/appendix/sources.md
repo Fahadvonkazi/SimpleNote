@@ -36,6 +36,7 @@ adding-a-theme-to-your-github-pages-site-using-jekyll
 - https://www.geeksforgeeks.org/how-to-start-vs-code-from-the-terminal-command-line/
 - https://getbootstrap.com/docs/5.3/getting-started/introduction/- 
 - https://git-scm.com/book/en/v2
+- https://github.com/hwrberlin/fswd-app
 - https://hackersandslackers.com/flask-sqlalchemy-database-models/
 - https://hwrberlin.github.io/fswd/
 - https://learn.microsoft.com/en-us/training/paths/beginner-python
